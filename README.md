@@ -7,6 +7,10 @@
 
 ## Usage
 
+    gem install jing
+
+then
+
     jing build
     jing serve
 

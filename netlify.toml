@@ -1,0 +1,3 @@
+[build]
+command = "gem install jing && jing build"
+publish = "_dst"

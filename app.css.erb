@@ -1,0 +1,7 @@
+<%=
+%w[
+
+_css/style.css
+
+].map { |f| load_content(f)[:body] }.join
+%>

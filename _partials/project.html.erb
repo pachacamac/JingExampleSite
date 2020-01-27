@@ -1,0 +1,15 @@
+<%
+title = meta[:title]
+images = meta[:images]
+text = meta[:text]
+%>
+<div class="page-content">
+  <h1><%= title %></h1>
+  <p style="text-align:center"><img src="<%= images.first %>" title="Main Image" alt="Main Image"></p>
+	<%= render('markdown', text: text) %>
+	<% images[1..-1].each_with_index do |image, idx| %>
+    <p style="text-align:center"><img src="<%= image %>" title="Image <%= idx+2 %>" alt="Image <%= idx+2 %>"></p>
+  <% end %>
+  <br/>
+  <%= render('folder_nav', current: title, key: :title, folder: 'projects', home: '/index.html') %>
+</div>

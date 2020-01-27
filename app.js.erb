@@ -1,0 +1,8 @@
+<%=
+%w[
+
+_js/modernizr-2.6.2.min.js
+_js/main.js
+
+].map { |f| load_content(f)[:body] }.join
+%>

@@ -1,0 +1,19 @@
+---
+layout: pages
+---
+<%
+folder = 'projects'
+files = Dir[File.join(folder, '*')].map { |file| [dstname(file, folder), load_content(file)[:meta]] }.sort_by{|_, cm| cm[:order]}
+%>
+<h1 class="centered">Jing example site</h4>
+
+<% files.each do |file, cm| %>
+  <div class="project-listing centered">
+    <a href="/<%= file %>">
+      <h2 class="centered"><%= cm[:title] %></h2>
+      <img src="<%= cm[:images].first %>" class="listing-img" alt="<%= cm[:title] %>">
+      <p class="centered"><%= cm[:text][0..128] %> [...]</p>
+    </a>
+  </div>
+<% end %>
+

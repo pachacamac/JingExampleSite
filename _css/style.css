@@ -1,0 +1,16 @@
+/* place your custom css or sass here */
+
+.page-content { border: 1px solid rgba(127,127,127,0.5); padding: 1em; }
+
+nav.main-nav ul li { list-style-type: none; display: inline; text-decoration: underline; }
+nav.main-nav ul li:not(:last-child) { margin-right: 1em; }
+
+.listing-img { width: 100%; max-width: 200px; }
+
+.project-listing { border: 1px solid rgba(127,127,127,0.5); margin: 1em; padding: 1em; }
+
+.pull-right { float: right !important; }
+
+.pull-left { float: left !important; }
+
+.centered { text-align: center; }

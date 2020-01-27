@@ -1,0 +1,14 @@
+<%
+folder = meta[:folder]
+home = meta[:home]
+current = meta[:current]
+key = meta[:key]
+files = Dir[File.join(folder, '*')].map{|file| [dstname(file, folder), load_content(file)[:meta]]}.sort_by{|_, cm| cm[:order]}
+pre,cur,nex = files.cycle.each_cons(3).find{|x,y,z| y[1][key] == current}
+%>
+
+<div class="centered">
+  <a class="pull-left" href="/<%= pre[0] %>" title="previous">◀ <%= pre[1][:title] %></a>
+  <a href="<%= home %>" title="home">⌂</a>
+  <a class="pull-right" href="/<%= nex[0] %>" title="next"><%= nex[1][:title] %> ▶</a>
+</div>
